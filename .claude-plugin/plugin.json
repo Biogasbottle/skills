@@ -5,6 +5,8 @@
     "./skills/engineering/grill-with-docs",
     "./skills/engineering/triage",
     "./skills/engineering/improve-codebase-architecture",
+    "./skills/engineering/memory-init",
+    "./skills/engineering/memory-patch",
     "./skills/engineering/setup-matt-pocock-skills",
     "./skills/engineering/tdd",
     "./skills/engineering/to-issues",
