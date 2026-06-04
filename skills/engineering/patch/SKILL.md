@@ -1,5 +1,5 @@
 ---
-name: memory-patch
+name: patch
 description: Propose and optionally apply distilled project memory updates after meaningful work. Use when the user asks for memory patching, session wrap-up, handoff, recording lessons, updating project memory, or when finishing substantial coding/debugging/design work that may change long-term project knowledge.
 ---
 
@@ -9,9 +9,9 @@ Turn completed work into durable, low-noise project memory. Prefer a proposal fi
 
 ## Quick Start
 
-1. Check whether the repo has `project-memory/templates/memory-patch.md`.
+1. Check whether the repo has `docs/agents/memory-patch.md`.
 2. If present, use that template. If absent, use the fallback structure below.
-3. Inspect only relevant artifacts: changed files, final diff, existing `CONTEXT.md`, `docs/adr/`, `project-memory/`, and `handoff/`.
+3. Inspect only relevant artifacts: changed files, final diff, existing `CONTEXT.md`, `docs/adr/`, `docs/`, and `docs/handoff/`.
 4. Produce a concise memory patch proposal, grouped by target file.
 5. Ask for confirmation before editing long-term memory files.
 
@@ -32,12 +32,11 @@ Skip it for tiny typo fixes, formatting-only changes, throwaway experiments, or 
 
 - `CONTEXT.md`: stable domain terms, relationships, naming ambiguities.
 - `docs/adr/`: architecture decisions, rejected alternatives, consequences.
-- `project-memory/architecture/`: system navigation or module relationships.
-- `project-memory/conventions/`: shared coding and collaboration rules.
-- `project-memory/flows/`: distilled business flow knowledge.
-- `project-memory/gotchas/`: platform limitations, recurring pitfalls, safe handling.
-- `project-memory/roadmap/`: medium-term engineering focus or known risks.
-- `handoff/current.md`: local, short-term, branch/session continuation notes.
+- `docs/architecture/`: system navigation or module relationships.
+- `docs/conventions/`: shared coding and collaboration rules.
+- `docs/flows/`: distilled business flow knowledge.
+- `docs/gotchas/`: platform limitations, recurring pitfalls, safe handling.
+- `docs/handoff/current.md`: local, short-term, branch/session continuation notes.
 
 Do not duplicate long reports. Link to `docs/`, `e2e-flows/`, tests, commits, or PRs when they already contain detail.
 
@@ -56,7 +55,7 @@ If the repo template exists, follow it. Otherwise use:
 
 ### Short-Term Handoff
 
-- Target: `handoff/current.md`
+- Target: `docs/handoff/current.md`
 - Current state: ...
 - Next action: ...
 - Blockers: ...
