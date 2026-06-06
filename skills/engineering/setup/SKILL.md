@@ -67,7 +67,7 @@ Confirm the layout:
 Run the bundled script to create the directory structure and seed files:
 
 ```bash
-node skills/engineering/setup/scripts/init-memory-system.js /absolute/path/to/repo
+node /path/to/skills/engineering/setup/scripts/init-memory-system.js /absolute/path/to/repo
 ```
 
 Do not overwrite existing files unless the user explicitly asks for migration or replacement.
