@@ -64,13 +64,35 @@ Confirm the layout:
 
 ### 3. Scaffold
 
-Run the bundled script to create the directory structure and seed files:
+Create the directory structure and seed files. Do not overwrite existing files unless the user explicitly asks for migration or replacement.
 
-```bash
-node skills/engineering/init/scripts/init-memory-system.js /absolute/path/to/repo
-```
+Create directories (use `mkdir -p`):
 
-Do not overwrite existing files unless the user explicitly asks for migration or replacement.
+- `docs/agents`
+- `docs/adr`
+- `docs/prd`
+- `docs/architecture`
+- `docs/conventions`
+- `docs/flows`
+- `docs/gotchas`
+- `docs/handoff`
+
+Create `CONTEXT.md` at the repo root if it doesn't exist, with a minimal domain glossary placeholder.
+
+Create seed files under `docs/` if they don't exist:
+
+- `docs/INDEX.md` — memory loading strategy table
+- `docs/agents/memory-patch.md` — memory patch proposal template
+- `docs/adr/0000-template.md` — ADR template
+- `docs/handoff/current.md` — working session handoff placeholder
+
+Use the config from step 2 to write the issue tracker, triage labels, and domain docs:
+
+- `docs/agents/issue-tracker.md`
+- `docs/agents/triage-labels.md`
+- `docs/agents/domain.md`
+
+For these three config files, reference the seed templates bundled with this skill (they're in the same directory as this SKILL.md) — copy their content verbatim, then fill in the user's choices from step 2.
 
 ### 4. Write boot protocol
 
