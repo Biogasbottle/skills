@@ -125,6 +125,7 @@ Never write real private data to project memory: phone numbers, user IDs, raw us
 
 ### Rules
 - if you need to make changes of the code has been manually modified, confirm with the user first.
+- Never run all test cases unless the user specifically requests it.
 ```
 
 If an `## Agent skills` block already exists in the chosen file, update its contents in-place rather than appending a duplicate. Don't overwrite user edits to the surrounding sections.

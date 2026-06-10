@@ -16,6 +16,7 @@
     "./skills/productivity/caveman",
     "./skills/productivity/grill-me",
     "./skills/productivity/handoff",
+    "./skills/productivity/teach",
     "./skills/productivity/write-a-skill"
   ]
 }
