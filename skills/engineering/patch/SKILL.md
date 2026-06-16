@@ -10,10 +10,44 @@ Turn completed work into durable, low-noise project memory. Prefer a proposal fi
 ## Quick Start
 
 1. Check whether the repo has `docs/agents/memory-patch.md`.
-2. If present, use that template. If absent, use the fallback structure below.
-3. Inspect only relevant artifacts: changed files, final diff, existing `CONTEXT.md`, `docs/adr/`, `docs/`, and `docs/handoff/`.
-4. Produce a concise memory patch proposal, grouped by target file.
-5. Ask for confirmation before editing long-term memory files.
+2. **If absent**, create the template scaffold immediately (see [Template Scaffold](#template-scaffold) below). This file is a reusable shape — leave it empty of actual content.
+3. **If present**, use its structure as the output format for your proposal.
+4. Inspect only relevant artifacts: changed files, final diff, existing `CONTEXT.md`, `docs/adr/`, `docs/`, and `docs/handoff/`.
+5. Produce a concise memory patch proposal **in the conversation**, never write the proposal into the template file.
+6. Ask for confirmation before editing long-term memory files.
+
+## Template Scaffold
+
+When `docs/agents/memory-patch.md` is missing, create it with exactly this content:
+
+```md
+# Memory Patch Proposal
+
+## Summary
+
+- What stable fact changed?
+
+## Proposed updates
+
+- `CONTEXT.md`:
+- `docs/adr/`:
+- `docs/architecture/`:
+- `docs/conventions/`:
+- `docs/flows/`:
+- `docs/gotchas/`:
+
+## Privacy check
+
+- [ ] Contains no real private user data
+- [ ] Contains no production secrets
+- [ ] Logs or identifiers are sanitized
+
+## Open questions
+
+- What still needs human confirmation?
+```
+
+Do not fill in this scaffold. It stays as a reusable template. Present your actual proposal in the conversation.
 
 ## When To Propose
 
@@ -42,28 +76,7 @@ Do not duplicate long reports. Link to `docs/`, `e2e-flows/`, tests, commits, or
 
 ## Proposal Format
 
-If the repo template exists, follow it. Otherwise use:
-
-```md
-## Memory Patch Proposal
-
-### Long-Term Updates
-
-- Target: `path/to/file.md`
-- Change: ...
-- Why durable: ...
-
-### Short-Term Handoff
-
-- Target: `docs/handoff/current.md`
-- Current state: ...
-- Next action: ...
-- Blockers: ...
-
-### Privacy Check
-
-- No real phone numbers, openids, unionids, counseling content, assessment answers, payment secrets, production keys, or raw production logs.
-```
+Follow the structure in `docs/agents/memory-patch.md` (created in step 2 if absent). Present your proposal in the conversation — do not write it into the template file.
 
 ## Apply Rules
 

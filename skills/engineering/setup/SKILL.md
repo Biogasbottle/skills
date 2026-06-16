@@ -117,7 +117,7 @@ Single-context / Multi-context. See `docs/agents/domain.md`.
 - Business flow knowledge: `docs/flows/`
 - Gotchas and platform constraints: `docs/gotchas/`
 - Temporary branch/session state: `docs/handoff/current.md`
-- Uncertain memory proposals: `docs/agents/memory-patch.md`
+- Memory patch template (reusable scaffold, not a target for proposals): `docs/agents/memory-patch.md`
 
 ### Privacy boundary
 
