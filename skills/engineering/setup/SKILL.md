@@ -101,7 +101,7 @@ Single-context / Multi-context. See `docs/agents/domain.md`.
 
 ### Boot protocol
 
-1. Read `docs/INDEX.md` first, then load only task-relevant memory.
+1. Read `docs/INDEX.md` first, then load only task-relevant memory. Re-read `docs/INDEX.md` and load newly relevant documents whenever the user's task shifts to a different category during the same session (e.g., analysis → implementation, design → debugging, feature work → refactoring).
 2. Read `CONTEXT.md` for domain language, business concepts, and naming ambiguity.
 3. Read `docs/adr/` for architectural tradeoffs and rejected approaches.
 4. Read `docs/flows/` for end-to-end business processes.

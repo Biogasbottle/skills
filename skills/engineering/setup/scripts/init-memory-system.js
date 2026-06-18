@@ -35,7 +35,7 @@ This directory is the repo-first engineering memory layer. Its goal is to let fu
 
 ## Loading Strategy
 
-Do not read the whole repository by default. Load the smallest useful context for the task:
+Do not read the whole repository by default. Load the smallest useful context for the task. Re-read this file whenever the task shifts to a different category during the same session (e.g., analysis → implementation, design → debugging).
 
 | Current task | Read first |
 | --- | --- |
