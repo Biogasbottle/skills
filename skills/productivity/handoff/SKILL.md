@@ -4,7 +4,7 @@ description: Compact the current conversation into a handoff document for anothe
 argument-hint: "What will the next session be used for?"
 ---
 
-Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save it to `docs/handoff/current.md` (read the file before you write to it).
+Write a handoff document summarising the current conversation so a fresh agent can continue the work. Read `docs/INDEX.md` and load all project memory documents relevant to this task. Save it to `docs/handoff/current.md` (read the file before you write to it).
 
 Include a "suggested skills" section in the document, which suggests skills that the agent should invoke.
 

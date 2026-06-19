@@ -7,6 +7,8 @@ description: Build a throwaway prototype to flesh out a design before committing
 
 A prototype is **throwaway code that answers a question**. The question decides the shape.
 
+Read `docs/INDEX.md` and load all project memory documents relevant to this task.
+
 ## Pick a branch
 
 Identify which question is being answered — from the user's prompt, the surrounding code, or by asking if the user is around:

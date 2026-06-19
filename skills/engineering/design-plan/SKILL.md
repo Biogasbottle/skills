@@ -35,6 +35,8 @@ Review:
 * Existing codebase
 * Existing architecture
 
+Read `docs/INDEX.md` and load all project memory documents relevant to this task.
+
 Identify:
 
 * missing details

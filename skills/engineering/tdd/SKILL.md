@@ -58,6 +58,8 @@ RIGHT (vertical):
 
 When exploring the codebase, use the project's domain glossary so that test names and interface vocabulary match the project's language, and respect ADRs in the area you're touching.
 
+Read `docs/INDEX.md` and load all project memory documents relevant to this task.
+
 Before writing any code:
 
 - [ ] Confirm with user what interface changes are needed

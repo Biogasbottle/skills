@@ -15,6 +15,8 @@ The issue tracker and triage label vocabulary should have been provided to you â
 
 Work from whatever is already in the conversation context. If the user passes an issue reference (issue number, URL, or path) as an argument, fetch it from the issue tracker and read its full body and comments.
 
+Read `docs/INDEX.md` and load all project memory documents relevant to this task.
+
 ### 2. Explore the codebase (optional)
 
 If you have not already explored the codebase, do so to understand the current state of the code. Issue titles and descriptions should use the project's domain glossary vocabulary, and respect ADRs in the area you're touching.
