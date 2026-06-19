@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: Test-driven development with red-green-refactor loop. Use when user wants to build features or fix bugs using TDD, mentions "red-green-refactor", wants integration tests, or asks for test-first development.
+description: Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests.
 ---
 
 # Test-Driven Development
@@ -9,23 +9,11 @@ description: Test-driven development with red-green-refactor loop. Use when user
 
 **Core principle**: Tests should verify behavior through public interfaces, not implementation details. Code can change entirely; tests shouldn't.
 
-**Good tests** are E2E or CF (chain-functional): they verify behavior through the outermost feasible boundary. An E2E test exercises the full stack. A CF test exercises the longest feasible chain when E2E is too costly — e.g., calling the API layer for frontend code. These tests describe _what_ the system does. A good test reads like a specification — "user can checkout with valid cart" — and survives internal refactors because it doesn't care about internal structure.
+**Good tests** are integration-style: they exercise real code paths through public APIs. They describe _what_ the system does, not _how_ it does it. A good test reads like a specification - "user can checkout with valid cart" tells you exactly what capability exists. These tests survive refactors because they don't care about internal structure.
 
 **Bad tests** are coupled to implementation. They mock internal collaborators, test private methods, or verify through external means (like querying a database directly instead of using the interface). The warning sign: your test breaks when you refactor, but behavior hasn't changed. If you rename an internal function and tests fail, those tests were testing implementation, not behavior.
 
 See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking guidelines.
-
-## Test Selection: E2E > CF > Unit
-
-Always pick the highest feasible level:
-
-**E2E** — always write at least one happy-path test from the outermost entry point (browser, HTTP request).
-
-**CF** (chain-functional) — when E2E is too costly, test the longest feasible chain from the next boundary: API calls for frontend, HTTP endpoint→DB for backend.
-
-**Unit** — only for algorithms with 10+ non-trivial branching paths (parsers, state machines, codecs). Not for CRUD, glue code, or simple functions.
-
-**Quantity**: few, high-quality tests on the critical path. One E2E happy-path test beats ten unit tests on trivial code.
 
 ## Anti-Pattern: Horizontal Slices
 
@@ -56,24 +44,19 @@ RIGHT (vertical):
 
 ### 1. Planning
 
-When exploring the codebase, use the project's domain glossary so that test names and interface vocabulary match the project's language, and respect ADRs in the area you're touching.
-
-Read `docs/INDEX.md` and load all project memory documents relevant to this task.
+When exploring the codebase, read `CONTEXT.md` (if it exists) so that test names and interface vocabulary match the project's domain language, and respect ADRs in the area you're touching.
 
 Before writing any code:
 
 - [ ] Confirm with user what interface changes are needed
-- [ ] Confirm with user which behaviors to test and at what test level (E2E / CF / Unit)
-- [ ] Always include the happy path as an E2E or CF test
-- [ ] Identify any complex algorithms that warrant a unit test
-- [ ] Identify opportunities for [deep modules](deep-modules.md) (small interface, deep implementation)
-- [ ] Design interfaces for [testability](interface-design.md)
+- [ ] Confirm with user which behaviors to test (prioritize)
+- [ ] Identify opportunities for deep modules (small interface, deep implementation) — run the `/codebase-design` skill for the vocabulary and the testability checks
 - [ ] List the behaviors to test (not implementation steps)
 - [ ] Get user approval on the plan
 
-Ask: "What should the public interface look like? Which behaviors are most important to test? Can we cover the happy path with an E2E test, or should we use CF?"
+Ask: "What should the public interface look like? Which behaviors are most important to test?"
 
-**Write few, high-quality tests.** Cover the happy path with E2E/CF. Add targeted unit tests only for complex branching logic. Do not write tests for simple CRUD, glue code, or to pad coverage numbers.
+**You can't test everything.** Confirm with the user exactly which behaviors matter most. Focus testing effort on critical paths and complex logic, not every possible edge case.
 
 ### 2. Tracer Bullet
 
@@ -117,8 +100,6 @@ After all tests pass, look for [refactor candidates](refactoring.md):
 ## Checklist Per Cycle
 
 ```
-[ ] Test is E2E or CF (unit only for complex algorithms)
-[ ] Happy path is covered
 [ ] Test describes behavior, not implementation
 [ ] Test uses public interface only
 [ ] Test would survive internal refactor

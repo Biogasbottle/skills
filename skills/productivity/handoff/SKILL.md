@@ -2,9 +2,10 @@
 name: handoff
 description: Compact the current conversation into a handoff document for another agent to pick up.
 argument-hint: "What will the next session be used for?"
+disable-model-invocation: true
 ---
 
-Write a handoff document summarising the current conversation so a fresh agent can continue the work. Read `docs/INDEX.md` and load all project memory documents relevant to this task. Save it to `docs/handoff/current.md` (read the file before you write to it).
+Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save to the temporary directory of the user's OS - not the current workspace.
 
 Include a "suggested skills" section in the document, which suggests skills that the agent should invoke.
 

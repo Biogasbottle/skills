@@ -20,6 +20,12 @@ _Avoid_: Bill, payment request
 **Customer**:
 A person or organization that places orders.
 _Avoid_: Client, buyer, account
+
+## Key Constraints
+
+When implementing or designing, always check (if these files exist):
+- \`docs/conventions/\` — coding patterns, naming, test rules
+- \`docs/gotchas/\` — known traps and fixes
 ```
 
 ## Rules
@@ -28,6 +34,7 @@ _Avoid_: Client, buyer, account
 - **Keep definitions tight.** One or two sentences max. Define what it IS, not what it does.
 - **Only include terms specific to this project's context.** General programming concepts (timeouts, error types, utility patterns) don't belong even if the project uses them extensively. Before adding a term, ask: is this a concept unique to this context, or a general programming concept? Only the former belongs.
 - **Group terms under subheadings** when natural clusters emerge. If all terms belong to a single cohesive area, a flat list is fine.
+- **Maintain Key Constraints section** after `## Language` for project-specific conventions and gotchas that are not discoverable from code. This section uses hard-link references (not full content).
 
 ## Single vs multi-context repos
 
